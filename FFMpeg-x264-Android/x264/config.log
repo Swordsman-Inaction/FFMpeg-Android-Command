@@ -1,0 +1,229 @@
+x264 configure script
+Command line options: "--cross-prefix=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-" "--sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot" "--host=arm-linux" "--enable-pic" "--disable-asm" "--enable-static" "--prefix=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android" "--disable-cli"
+
+checking whether /Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc works... yes
+checking whether /Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc supports for( int i = 0; i < 9; i++ ); with -std=gnu99... yes
+checking for pthread_create(0,0,0,0); in pthread.h... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99 -lpthread   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm -o conftest
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/../lib/gcc/arm-linux-androideabi/4.6/../../../../arm-linux-androideabi/bin/ld: error: cannot find -lpthread
+collect2: ld returned 1 exit status
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+#include <pthread.h>
+int main (void) { pthread_create(0,0,0,0); return 0; }
+--------------------------------------------------
+checking for pthread_create(0,0,0,0); in pthread.h... yes
+checking for cpu_set_t p_aff; return CPU_COUNT(&p_aff); in sched.h... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99 -D_GNU_SOURCE -Werror   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+conftest.c: In function 'main':
+conftest.c:2:19: error: unknown type name 'cpu_set_t'
+conftest.c:2:1: error: implicit declaration of function 'CPU_COUNT' [-Werror=implicit-function-declaration]
+cc1: all warnings being treated as errors
+
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+#include <sched.h>
+int main (void) { cpu_set_t p_aff; return CPU_COUNT(&p_aff); return 0; }
+--------------------------------------------------
+checking for return log2f(2); in math.h... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99 -Werror   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+conftest.c: In function 'main':
+conftest.c:2:1: error: implicit declaration of function 'log2f' [-Werror=implicit-function-declaration]
+conftest.c:2:26: error: incompatible implicit declaration of built-in function 'log2f' [-Werror]
+cc1: all warnings being treated as errors
+
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+#include <math.h>
+int main (void) { return log2f(2); return 0; }
+--------------------------------------------------
+checking for sws_init_context(0,0,0); in libswscale/swscale.h... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99  -lswscale -lavutil   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+conftest.c:1:32: fatal error: libswscale/swscale.h: No such file or directory
+compilation terminated.
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+#include <libswscale/swscale.h>
+int main (void) { sws_init_context(0,0,0); return 0; }
+--------------------------------------------------
+checking for -lpostproc... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99 -lpostproc   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/../lib/gcc/arm-linux-androideabi/4.6/../../../../arm-linux-androideabi/bin/ld: error: cannot find -lpostproc
+collect2: ld returned 1 exit status
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+int main (void) {  return 0; }
+--------------------------------------------------
+checking for -lavcodec... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99 -lavcodec   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/../lib/gcc/arm-linux-androideabi/4.6/../../../../arm-linux-androideabi/bin/ld: error: cannot find -lavcodec
+collect2: ld returned 1 exit status
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+int main (void) {  return 0; }
+--------------------------------------------------
+checking for -lswscale... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99 -lswscale   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/../lib/gcc/arm-linux-androideabi/4.6/../../../../arm-linux-androideabi/bin/ld: error: cannot find -lswscale
+collect2: ld returned 1 exit status
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+int main (void) {  return 0; }
+--------------------------------------------------
+checking for -lavutil... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99 -lavutil   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/../lib/gcc/arm-linux-androideabi/4.6/../../../../arm-linux-androideabi/bin/ld: error: cannot find -lavutil
+collect2: ld returned 1 exit status
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+int main (void) {  return 0; }
+--------------------------------------------------
+checking for -lm... yes
+checking for -lz... yes
+checking for -lbz2... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99 -lbz2   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/../lib/gcc/arm-linux-androideabi/4.6/../../../../arm-linux-androideabi/bin/ld: error: cannot find -lbz2
+collect2: ld returned 1 exit status
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+int main (void) {  return 0; }
+--------------------------------------------------
+checking for -lavifil32... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99 -lavifil32   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/../lib/gcc/arm-linux-androideabi/4.6/../../../../arm-linux-androideabi/bin/ld: error: cannot find -lavifil32
+collect2: ld returned 1 exit status
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+int main (void) {  return 0; }
+--------------------------------------------------
+checking for -lws2_32... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99 -lws2_32   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/../lib/gcc/arm-linux-androideabi/4.6/../../../../arm-linux-androideabi/bin/ld: error: cannot find -lws2_32
+collect2: ld returned 1 exit status
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+int main (void) {  return 0; }
+--------------------------------------------------
+checking for avformat_close_input(0); in libavformat/avformat.h... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99  -L. -lavformat -lm -lz   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+conftest.c:1:34: fatal error: libavformat/avformat.h: No such file or directory
+compilation terminated.
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+#include <libavformat/avformat.h>
+int main (void) { avformat_close_input(0); return 0; }
+--------------------------------------------------
+checking for FFMS_DestroyVideoSource(0); in ffms.h... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99  -lffms2   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+conftest.c:1:18: fatal error: ffms.h: No such file or directory
+compilation terminated.
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+#include <ffms.h>
+int main (void) { FFMS_DestroyVideoSource(0); return 0; }
+--------------------------------------------------
+checking for FFMS_DestroyVideoSource(0); in ffms.h... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99  -lffms2 -lstdc++ -L. -lavformat -lm -lz   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+conftest.c:1:18: fatal error: ffms.h: No such file or directory
+compilation terminated.
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+#include <ffms.h>
+int main (void) { FFMS_DestroyVideoSource(0); return 0; }
+--------------------------------------------------
+checking for lsmash.h... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99  -llsmash   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+conftest.c:1:20: fatal error: lsmash.h: No such file or directory
+compilation terminated.
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+#include <lsmash.h>
+int main (void) {  return 0; }
+--------------------------------------------------
+checking for -lz... yes
+checking for gpac/isomedia.h... no
+Failed commandline was:
+--------------------------------------------------
+/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/bin/arm-linux-androideabi-gcc conftest.c  -Wall -I. -I$(SRCPATH) --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -std=gnu99 -lgpac_static -lz   --sysroot=/Users/edward/Documents/Inaction/GitHub/FFMpeg-Android-Command/FFMpeg-x264-Android/toolchain-android/sysroot -lm  -o conftest
+conftest.c:1:27: fatal error: gpac/isomedia.h: No such file or directory
+compilation terminated.
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+#include <gpac/isomedia.h>
+int main (void) {  return 0; }
+--------------------------------------------------
+checking for uint32_t test_vec __attribute__ ((vector_size (16))) = {0,1,2,3}; in stdint.h... yes
+checking for stdio.h... yes
+checking for -fno-tree-vectorize... yes
+checking for fseeko(stdin,0,0); in stdio.h... yes
+checking for -Wshadow... yes
+checking for -Wmaybe-uninitialized... yes
+
+platform:      ARM
+system:        LINUX
+cli:           no
+libx264:       internal
+shared:        no
+static:        yes
+asm:           no
+interlaced:    yes
+avs:           avxsynth
+lavf:          no
+ffms:          no
+mp4:           no
+gpl:           yes
+thread:        posix
+opencl:        yes
+filters:       crop select_every 
+debug:         no
+gprof:         no
+strip:         no
+PIC:           yes
+bit depth:     8
+chroma format: all

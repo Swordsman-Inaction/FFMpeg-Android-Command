@@ -2,18 +2,15 @@
 Provide lib for android developer who wants use FFMpeg command by coding.
 
 # Library Version
-----
 * FFMpeg 2.6.3
 * x264   0.142.x
 
 # Description
-----
 * FFMpeg-x264-Android: used to generate static shared library.
 * jni: used to build so lib for android project.
 * FFMpegLib.java: the class provides ffmpeg function can be used in java source code.
 
 # Introduction
-----
 ## Basic
 * Copy jni folder to your Android project
 * Copy FFMpegLib.java to your project and change the package name if you like
@@ -31,5 +28,4 @@ The advanced introduction meet more specific needs. For example, change ffmpeg c
 * Follow basic introduction to finish the remaining steps
 
 # License
-----
 Check file LICENSE
